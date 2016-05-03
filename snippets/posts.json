@@ -1,0 +1,44 @@
+[
+  {
+    "title": "Hop into the sea",
+    "date": "12 May, 2014",
+    "image": "images/piran.jpg",
+    "html": "posts/piran.html",
+    "property": "places"
+  },
+  {
+    "title": "Cows... So many cows...",
+    "date": "12 May, 2015",
+    "image": "images/velika_planina.jpg",
+    "html": "posts/velika_planina.html",
+    "property": "places"
+  },
+  {
+    "title": "Vineyards of Primorska",
+    "date": "12 May, 2014",
+    "image": "images/brda.jpg",
+    "html": "posts/brda.html",
+    "property": "places"
+  },
+  {
+    "title": "Visiting river Soča",
+    "date": "12 May, 2014",
+    "image": "images/kobarid.jpg",
+    "html": "posts/kobarid.html",
+    "property": "places"
+  },
+  {
+    "title": "Bled and its hidden pearls",
+    "date": "12 May, 2014",
+    "image": "images/vintgar.jpg",
+    "html": "posts/vintgar.html",
+    "property": "places"
+  },
+    {
+    "title": "Burek",
+    "date": "12 May, 2014",
+    "image": "images/burek.jpg",
+    "html": "posts/burek.html",
+    "property": "dishes"
+  }
+]
