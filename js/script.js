@@ -1,125 +1,117 @@
-/*
-Tole je, da se meni skrije!
-$(function () { // Same as document.addEventListener("DOMContentLoaded"...
+$(function(){
 
-  // Same as document.querySelector("#navbarToggle").addEventListener("blur",...
-  $("#navbarToggle").blur(function (event) {
-    var screenWidth = window.innerWidth;
-    if (screenWidth < 768) {
-      $("#collapsable-nav").collapse('hide');
-    }
+  var post_tile = "snippets/post-tile.html";
+  var about = "snippets/about.html";
+  var useful_stuff = "snippets/useful_stuff.html";
+  var posts_json = "snippets/posts.json";
+
+
+
+
+
+function loadTiles(type){
+    var isOfAType = function(post){return post.type==type;}
+  
+
+  $.getJSON(posts_json, function(posts){
+      if(type!='all')posts = posts.filter(isOfAType);
+      $('#main-content').empty();
+      for (var i = posts.length - 1; i >= 0; i--) {
+            
+            $('#main-content').append('<div id='+posts[i].id+' class="tile col-md-4 col-sm-6 col-xs-12"><img src=images/'
+              +posts[i].id+'.jpg><span class="title">'+posts[i].title+'</span><br><span class="date">'
+              +posts[i].date+'</span></div>');
+            }
+      for (var i = posts.length - 1; i >= 0; i--) {
+        
+        $('#'+posts[i].id).click(function(){
+          var html = "posts/"+this.id+".html";
+          $('#main-content').load(html);
+        });
+      }
   });
-});
+  }
+  $('.navbar-brand').click(function(){loadTiles("all")});
+  $('#foods').click(function(){loadTiles("food")});
+  $('#places').click(function(){loadTiles("place")});
+  loadTiles("all")
+
+
+
+/*
+  $.getJSON(posts_json, function(posts){
+      posts.filter(isOfAType)
+      $.get(post_tile, function(tile){
+          console.log(tile);
+          for (var i = posts.length - 1; i >= 0; i--) {
+            
+            console.log(posts[i]);
+            
+            //console.log(tile.getElementById('.tile'));
+            $('#main-content').append('tile');
+            $('tile')
+            //var part = insertProperty(tile, "title", posts[i].title);
+            //part = insertProperty(part, "image", posts[i].image);
+            //part = insertProperty(part, "date", posts[i].date);
+            //html += part;
+            //$('#main-content').append(part);
+          }
+      });
+  });
+
+  function posts(){
+    for (var i = posts_json.length - 1; i >= 0; i--) {
+      console.log(posts_json[i]);
+      var part = post_tile(post_tile, "title", posts[i].title);
+      part = insertProperty(part, "image", posts[i].image);
+      part = insertProperty(part, "date", posts[i].date);
+      html += part;
+      $('#main-content').append(html);
+    }}
+
+    posts();
 */
 
-(function (global) {
-
-var dc = {};//????
-
-var homeHtmlUrl = "snippets/home-snippet.html";
-var postTile = "snippets/post-tile.html";
-var aboutSnippet = "snippets/about.html";
-var usefulStuffSnippet = "snippets/useful_stuff.html";
-var allPosts = "snippets/posts.json";
-
-// Convenience function for inserting innerHTML for 'select'
-var insertHtml = function (selector, html) {
-  var targetElem = document.querySelector(selector);
-  targetElem.innerHTML = html;
-};
-
-// Show loading icon inside element identified by 'selector'.
-var showLoading = function (selector) {
-  var html = "<div class='text-center'>";
-  html += "<img src='images/ajax-loader.gif'></div>";
-  insertHtml(selector, html);
-};
-
-// Return substitute of '{{propName}}' 
-// with propValue in given 'string' 
-var insertProperty = function (string, propName, propValue) {
-  var propToReplace = "{{" + propName + "}}";
-  string = string
-    .replace(new RegExp(propToReplace, "g"), propValue);
-  return string;
-}
-
-
-// On page load (before images or CSS)
-document.addEventListener("DOMContentLoaded", function (event) {
-  // On first load, show home view
-  showLoading("#main-content");
-  $ajaxUtils.sendGetRequest(
-    allPosts, 
-    buildAndShowAllPosts, 
-    true); // Explicitely setting the flag to get JSON from server processed into an object literal
-});
-
-function buildAndShowAllPosts(posts){//,type
-  // Load home snippet page
-  $ajaxUtils.sendGetRequest(
-    homeHtmlUrl,
-    function (homeHtml) {
-      $ajaxUtils.sendGetRequest(
-        postTile,
-        function (postTile) {
-          var html="";
-          posts.filter(isOfAType);
-          for (var i = posts.length - 1; i >= 0; i--) {
-            //console.log(posts[i]);
-            var part = insertProperty(postTile, "title", posts[i].title);
-            part = insertProperty(part, "image", posts[i].image);
-            part = insertProperty(part, "date", posts[i].date);
-            html+=part;
-            insertHtml("#main-content", html);
-          }},false);
-    },
-    false);
-}
-
-function isOfAType(post, type){
-  return post.type===type;
-}
-
-
-  $('.tile .col-md-4 .col-sm-6 .col-xs-12').click(function() {
-    alert("Hello!");
-    console.log(this);
+  $('#about').click(function(){
+    $('#main-content').load(about);
   });
 
-dc.filterProperty = function () {
-  showLoading("#main-content");
-  console.log(this);
-};
-
-dc.loadAbout = function () {
-  showLoading("#main-content");
-  $ajaxUtils.sendGetRequest(
-    aboutSnippet,
-    function(snippet){
-      insertHtml("#main-content", snippet);
-    },
-    false)
-};
-
-dc.loadUsefulStuff = function () {
-  showLoading("#main-content");
-  $ajaxUtils.sendGetRequest(
-    usefulStuffSnippet,
-    function(snippet){
-      insertHtml("#main-content", snippet);
-    },
-    false);
-};
-
-
-$(document).ready(function() {
-  $('.tile').click(function() {
-    alert("Hello!");
-    console.log(this);
+  $('#useful').click(function(){
+    $('#main-content').load(useful_stuff);
   });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });
-
-global.$dc = dc;
-
-})(window);

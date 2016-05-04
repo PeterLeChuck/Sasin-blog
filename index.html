@@ -20,7 +20,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html">Slovenia Survival Guide</a>
+          <a class="navbar-brand" >Slovenia Survival Guide</a><!--href="index.html"-->
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -33,10 +33,10 @@
             <button type="submit" class="btn btn-default">Submit</button>
           </form>-->
           <ul class="nav navbar-nav navbar-right">
-            <li><a >Explore</a></li> <!--onclick="$dc.filterProperty();"-->
-            <li><a >Cuisine</a></li>
-            <li><a onclick="$dc.loadAbout();">About</a></li>
-            <li><a onclick="$dc.loadUsefulStuff();">Useful stuff</a></li>
+            <li id="places"><a>Explore</a></li> <!--onclick="$dc.filterProperty();"-->
+            <li id="foods"><a>Cuisine</a></li>
+            <li id="about"><a>About</a></li>
+            <li id="useful"><a>Useful stuff</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -50,7 +50,9 @@
     </div>
 
 
-  <div id="main-content" class="container">
+  <div  class="container">
+    <div id="main-content" class="row">
+    </div>
   </div>
 
   <footer class="panel-footer">
