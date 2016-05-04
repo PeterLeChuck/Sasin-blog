@@ -5,15 +5,15 @@ $(function(){
   var useful_stuff = "snippets/useful_stuff.html";
   var posts_json = "snippets/posts.json";
 
-
+function changeSapia(image,procent){
+  image.css("-webkit-filter", 'sepia('+procent+'%)');
+}
 
 
 
 function loadTiles(type){
-    var isOfAType = function(post){return post.type==type;}
-  
-
-  $.getJSON(posts_json, function(posts){
+    var isOfAType = function(post){return post.type==type;}  
+    $.getJSON(posts_json, function(posts){
       if(type!='all')posts = posts.filter(isOfAType);
       $('#main-content').empty();
       for (var i = posts.length - 1; i >= 0; i--) {
@@ -23,7 +23,15 @@ function loadTiles(type){
               +posts[i].date+'</span></div>');
             }
       for (var i = posts.length - 1; i >= 0; i--) {
-        
+        $('#'+posts[i].id+' > img').mouseenter(function(){
+          //console.log($(this));
+          //$(this).css("-webkit-filter", 'sepia(50%)');
+          changeSapia($(this),0);
+          });
+        $('#'+posts[i].id+' > img').mouseleave(function(){
+          changeSapia($(this),100);
+          });
+
         $('#'+posts[i].id).click(function(){
           var html = "posts/"+this.id+".html";
           $('#main-content').load(html);
@@ -35,7 +43,9 @@ function loadTiles(type){
   $('#foods').click(function(){loadTiles("food")});
   $('#places').click(function(){loadTiles("place")});
   loadTiles("all")
-
+  $('.navbar-brand').mouseenter(function(){
+          console.log('this');
+          });
 
 
 /*

@@ -3,6 +3,7 @@
 }
 .tile img{
   width: 350px;
+  -webkit-filter: sepia(100%);
 }
 .tile span{
   position: absolute;
@@ -16,3 +17,4 @@
   color: #fff;
   opacity: 0.5;
 }
+
