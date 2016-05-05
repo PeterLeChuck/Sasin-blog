@@ -24,29 +24,29 @@ function loadTiles(type){
             }
       for (var i = posts.length - 1; i >= 0; i--) {
         $('#'+posts[i].id+' > img').mouseenter(function(){
-          //console.log($(this));
-          //$(this).css("-webkit-filter", 'sepia(50%)');
-          changeSapia($(this),0);
+          $(this).addClass("nosepia");
           });
         $('#'+posts[i].id+' > img').mouseleave(function(){
-          changeSapia($(this),100);
+          $(this).removeClass("nosepia");
           });
 
         $('#'+posts[i].id).click(function(){
+          //$(this).animate({height: '150px',  width: '150px'});
           var html = "posts/"+this.id+".html";
           $('#main-content').load(html);
         });
       }
   });
   }
+
+
+
+
   $('.navbar-brand').click(function(){loadTiles("all")});
   $('#foods').click(function(){loadTiles("food")});
   $('#places').click(function(){loadTiles("place")});
   loadTiles("all")
-  $('.navbar-brand').mouseenter(function(){
-          console.log('this');
-          });
-
+  
 
 /*
   $.getJSON(posts_json, function(posts){
@@ -89,39 +89,4 @@ function loadTiles(type){
   $('#useful').click(function(){
     $('#main-content').load(useful_stuff);
   });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 });
