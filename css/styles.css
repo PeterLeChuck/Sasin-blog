@@ -1,12 +1,20 @@
 body {
-  background-color: #2ef5d1;
+  background-color: #704214;
 }
 .jumbotron{
-  background-color: #2ef5d1;
+  background-color: #704214;
   color: #32f500;
+
+} 
+.panel-footer {
+  border: 0;
+  background-color: #704214;
+  color: #000000;
+  font-size: 0.75em;
 } 
 .navbar{
-  background-color: #f5f500;
+  border: 0;
+  background-color: #704214;
   color: #ff0000;
 }
 
@@ -38,13 +46,13 @@ body {
 
 .tile span {
   width: 100%;
-  color: #ff0088;
+  color: #ffffff;
 }
 
 .title-tile{
   position: absolute;
   bottom: 20px;
-  right: 0;
+  left: 5px;
   text-align: left;
   font-size: 2em;
 }
