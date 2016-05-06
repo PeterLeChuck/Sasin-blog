@@ -18,15 +18,15 @@ function loadTiles(type){
       $('#main-content').empty();
       for (var i = posts.length - 1; i >= 0; i--) {
             
-            $('#main-content').append('<div id='+posts[i].id+' class="tile col-md-4 col-sm-6 col-xs-12"><img src=images/'
-              +posts[i].id+'.jpg><span class="title">'+posts[i].title+'</span><br><span class="date">'
-              +posts[i].date+'</span></div>');
-            }
+            $('#main-content').append('<div class="col-md-4 col-sm-6 col-xs-12"><div id='+posts[i].id+' class="tile"><img src=images/'
+              +posts[i].id+'.jpg><span class="date-tile">'
+              +posts[i].date+'</span><span class="title-tile">'+posts[i].title+'</span></div></div>');
+            }//href="posts/'+posts[i].id+'.html"
       for (var i = posts.length - 1; i >= 0; i--) {
-        $('#'+posts[i].id+' > img').mouseenter(function(){
+        $('#'+posts[i].id).mouseenter(function(){
           $(this).addClass("nosepia");
           });
-        $('#'+posts[i].id+' > img').mouseleave(function(){
+        $('#'+posts[i].id).mouseleave(function(){
           $(this).removeClass("nosepia");
           });
 

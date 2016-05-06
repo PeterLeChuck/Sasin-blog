@@ -1,38 +1,58 @@
-.tile a{
-  color: #000;
+body {
+  background-color: #2ef5d1;
+}
+.jumbotron{
+  background-color: #2ef5d1;
+  color: #32f500;
+} 
+.navbar{
+  background-color: #f5f500;
+  color: #ff0000;
 }
 
-
-.tile img{
+.tile > img{
   width: 350px;
   -webkit-transition:-webkit-filter 0.4s ease-in-out;
   -webkit-filter: sepia(100%);
-
 }
+
+.nosepia > img{
+ -webkit-filter: sepia(0%);
+}
+
 .row {
   margin-bottom: 15px;
 }
 
-.top {
-
-
-
-
-}
-
-.tile .nosepia {
- -webkit-filter: sepia(0%);
-}
-
-.tile span{
-  position: absolute;
-  bottom: 0;
-  right: 0;
+.tile {
+  position: relative;
   width: 100%;
-  text-align: center;
-  font-size: 1.2em;
-  text-transform: uppercase;
-  color: #fff;
-  opacity: 0.5;
+  margin:15px 0 15px 0;
+
+}
+
+.tile img {
+  position: relative;
+  width: 100%;
+}
+
+.tile span {
+  width: 100%;
+  color: #ff0088;
+}
+
+.title-tile{
+  position: absolute;
+  bottom: 20px;
+  right: 0;
+  text-align: left;
+  font-size: 2em;
+}
+.date-tile{
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-align: right;
+  font-size: 1.5em;
 }
 

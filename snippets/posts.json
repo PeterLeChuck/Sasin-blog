@@ -1,13 +1,13 @@
 [
   {
     "id": "piran",
-    "title": "Hop into the sea",
+    "title": "Hop into the Sea",
     "date": "12 May, 2014",
     "type": "place"
   },
   {
     "id": "velika_planina",
-    "title": "Cows... So many cows...",
+    "title": "Cows... So many Cows...",
     "date": "12 May, 2015",
     "type": "place"
   },
@@ -31,7 +31,7 @@
   },
   { 
     "id": "vintgar",
-    "title": "Bled and its hidden pearls",
+    "title": "Bled and its Hidden Pearls",
     "date": "12 May, 2014",
     "type": "place"
   }
