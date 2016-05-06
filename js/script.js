@@ -23,20 +23,33 @@ function loadTiles(type){
               +posts[i].date+'</span><span class="title-tile">'+posts[i].title+'</span></div></div>');
             }//href="posts/'+posts[i].id+'.html"
       for (var i = posts.length - 1; i >= 0; i--) {
-        $('#'+posts[i].id).mouseenter(function(){
+        $('#'+posts[i].id).hover(function(){
           $(this).addClass("nosepia");
-          });
-        $('#'+posts[i].id).mouseleave(function(){
+          $('span',this).animate({opacity: 0, 'boxShadowX': '10px',
+    'boxShadowY':'10px',
+    'boxShadowBlur': '20px'});
+          },function(){
           $(this).removeClass("nosepia");
+          $('span',this).animate({opacity: 1, 'boxShadowX': '0px',
+    'boxShadowY':'0px',
+    'boxShadowBlur': '0px'});
           });
 
+
         $('#'+posts[i].id).click(function(){
-          //$(this).animate({height: '150px',  width: '150px'});
+          //$(this).animate({height: '550px',right:"100px",  width: '150px'});
           var html = "posts/"+this.id+".html";
           $('#main-content').load(html);
         });
       }
   });
+  }
+
+  function move(start, finish, speed){
+    var x = finish.position().top- start.position().top;
+    var y = finish.position().left- start.position().left;
+    var w = finish.width() - start.width();
+    var h = finish.width() - start.width();
   }
 
 

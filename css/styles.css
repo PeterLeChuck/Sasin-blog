@@ -1,31 +1,60 @@
 body {
-  background-color: #704214;
+  background-image: url("/images/background5.jpg");
+  background-repeat: no-repeat;
+  background-size:100% 100%;
+  
 }
+
+.navbar-default .navbar-nav>li>a {
+  color: #1B1B1B;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  color: #1B1B1B;
+}
+
 .jumbotron{
-  background-color: #704214;
-  color: #32f500;
+  background-color: transparent;
+  color: #1B1B1B;
 
 } 
+.text{
+  color: #1B1B1B;
+
+}
+.text > img{
+  width: 100%;
+  box-shadow: 10px 10px 10px #1B1B1B;
+
+}
 .panel-footer {
   border: 0;
-  background-color: #704214;
-  color: #000000;
+  background-color: transparent;
+  color: #1B1B1B;
   font-size: 0.75em;
 } 
+
 .navbar{
   border: 0;
-  background-color: #704214;
-  color: #ff0000;
+  background-color: transparent;
+}
+
+#brand {
+  color: #1B1B1B;
 }
 
 .tile > img{
   width: 350px;
-  -webkit-transition:-webkit-filter 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
+  -webkit-transition: all 0.4s ease-in-out;
   -webkit-filter: sepia(100%);
+
+  box-shadow: none;
 }
 
 .nosepia > img{
  -webkit-filter: sepia(0%);
+ box-shadow: 10px 10px 10px #1B1B1B;
 }
 
 .row {
@@ -36,7 +65,6 @@ body {
   position: relative;
   width: 100%;
   margin:15px 0 15px 0;
-
 }
 
 .tile img {
@@ -46,7 +74,7 @@ body {
 
 .tile span {
   width: 100%;
-  color: #ffffff;
+  color: #f0ead6;
 }
 
 .title-tile{
@@ -54,13 +82,13 @@ body {
   bottom: 20px;
   left: 5px;
   text-align: left;
-  font-size: 2em;
-}
-.date-tile{
-  position: absolute;
-  right: 0;
-  top: 0;
-  text-align: right;
   font-size: 1.5em;
 }
 
+.date-tile{
+  position: absolute;
+  bottom: 0px;
+  left: 5px;
+  text-align: left;
+  font-size: 1.25em;
+}
